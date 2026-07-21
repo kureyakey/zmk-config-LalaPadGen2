@@ -1,4 +1,7 @@
 #include <input/processors.dtsi>
+#include <input/processors/runtime-input-processor.dtsi>
+#include <behaviors/runtime-sensor-rotate.dtsi>
+#include <behaviors/battery_history_request.dtsi>
 #include <dt-bindings/zmk/zip_dynamic_scale.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
