@@ -1,4 +1,6 @@
 #include "lalapadgen2.dtsi"
+#include <input/processors.dtsi>
+#include <input/processors/runtime-input-processor.dtsi>
 
 &default_transform {
     col-offset = <6>;
@@ -18,6 +20,17 @@
 &trackpad_listener_R {
     status = "okay";
     device = <&iqs9151>;
+    input-processors = <&mouse_runtime_input_processor>;
+
+scroller {
+        layers = <3>;
+        input-processors =
+            <&zip_xy_transform INPUT_TRANSFORM_X_INVERT
+             &zip_xy_to_scroll_mapper
+             &zip_scroll_transform INPUT_TRANSFORM_X_INVERT
+             &zip_scroll_scaler 1 5
+             &scroll_runtime_input_processor>;
+    };
 };
 &trackpad_listener_L {
     status = "okay";
