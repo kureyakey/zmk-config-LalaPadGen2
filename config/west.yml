@@ -1,5 +1,7 @@
 manifest:
   remotes:
+    - name: cormoran
+      url-base: https://github.com/cormoran
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
     - name: ShiniNet
@@ -8,8 +10,8 @@ manifest:
       url-base: https://github.com/caksoylar
   projects:
     - name: zmk
-      remote: zmkfirmware
-      revision: v0.3.0
+      remote: cormoran
+      revision: v0.3-branch+dya
       import: app/west.yml
     - name: zmk-driver-iqs9151
       remote: ShiniNet
@@ -20,5 +22,25 @@ manifest:
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: v0.3
+    - name: zmk-module-ble-management
+      remote: cormoran
+      revision: main
+      
+    - name: zmk-module-battery-history
+      remote: cormoran
+      revision: main
+
+    - name: zmk-module-settings-rpc
+      remote: cormoran
+      revision: main
+
+    - name: zmk-module-runtime-input-processor
+      remote: cormoran
+      revision: main
+
+    - name: zmk-behavior-runtime-sensor-rotate
+      remote: cormoran
+      revision: main
+      
   self:
     path: config
